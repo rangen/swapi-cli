@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
 
-require_relative "../environment"
+# require_relative "../environment"
+require 'bundler'
+Bundler.require
 
-API.gather_spells
+require './lib/api'
+require './lib/cli'
+require './lib/character'
+
+
 $prompt = TTY::Prompt.new
 CLI.new
 
