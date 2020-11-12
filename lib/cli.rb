@@ -32,6 +32,7 @@ class CLI
         if @next
             choices << "Next Page"
         end
+        choices << "Exit"
 
         message = "Welcome, Star Wars nerd! \n\nThere are #{@count} known characters in the Galaxy\n\nWho would you like to learn more about?\n"
         choice = $prompt.select(message, choices, @tty_options)
@@ -41,6 +42,8 @@ class CLI
             fetch_and_set(@previous)
         when "Next Page"
             fetch_and_set(@next)
+        when "Exit"
+            #do nothing and let program exit cleanly from the recursive menus
         else
             show_character_detail(choice)
         end
