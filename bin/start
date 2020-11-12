@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative "../environment"
+
+API.gather_spells
+$prompt = TTY::Prompt.new
+CLI.new
+
+
